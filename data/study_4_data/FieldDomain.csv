@@ -1,0 +1,27 @@
+FieldID,field_display_name,domain_display_name
+1459,Health Professions,Health Sciences
+1,Medicine,Health Sciences
+406,Dentistry,Health Sciences
+552,Nursing,Health Sciences
+59,Veterinary,Health Sciences
+3,"Biochemistry, Genetics and Molecular Biology",Life Sciences
+13,Agricultural and Biological Sciences,Life Sciences
+14,Neuroscience,Life Sciences
+18,Immunology and Microbiology,Life Sciences
+132,"Pharmacology, Toxicology and Pharmaceutics",Life Sciences
+257,Chemical Engineering,Physical Sciences
+83,Earth and Planetary Sciences,Physical Sciences
+48,Environmental Science,Physical Sciences
+0,Physics and Astronomy,Physical Sciences
+36,Energy,Physical Sciences
+28,Mathematics,Physical Sciences
+23,Chemistry,Physical Sciences
+6,Computer Science,Physical Sciences
+2,Engineering,Physical Sciences
+34,Materials Science,Physical Sciences
+1973,"Economics, Econometrics and Finance",Social Sciences
+4319,Decision Sciences,Social Sciences
+42,Social Sciences,Social Sciences
+7515,Arts and Humanities,Social Sciences
+104,Psychology,Social Sciences
+13278,"Business, Management and Accounting",Social Sciences
