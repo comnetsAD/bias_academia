@@ -1,4 +1,5 @@
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
-
+observational_analyses/data/large
+*/observational_analyses/data/large/*
