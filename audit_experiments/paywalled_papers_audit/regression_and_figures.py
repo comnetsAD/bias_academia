@@ -9,26 +9,86 @@ from matplotlib.lines import Line2D
 
 df = pd.read_csv('paywalled_papers_audit_reply_data.csv')
 
-#log odds estimate on the probability of receiving a reply
-logit_model = smf.logit("replied ~ C(sender_name, Treatment(reference='Karl Muller')) + C(sender_status, Treatment(reference='Journal Article')) + C(sender_university, Treatment(reference='New York University')) + C(paper_domain, Treatment(reference='Health Sciences')) + h_index + academic_age + C(matching_continent, Treatment(reference='No Match'))",
-    data=df)
+#regression models estimating likelihood of any reply
+#log odds estimate on the probability of receiving the paper in question
+base = (
+    "C(sender, Treatment(reference='german')) + "
+    "C(sender_status, Treatment(reference='Journal Article')) + "
+    "C(sender_university, Treatment(reference='New York University'))"
+)
 
-res = logit_model.fit()
-print(res.summary())
+controls = ("C(paper_domain, Treatment(reference='Health Sciences')) + h_index + academic_age + C(matching_continent, Treatment(reference='No Match'))")
 
 
+formula_base = (
+    "replied ~ " + base
+)
+
+model_base = smf.logit(formula_base, data = df)
+result_base = model_base.fit()
+print(result_base.summary())
+
+formula_controls = (
+    "replied ~ " + base + " + " + controls
+)
+
+model_controls = smf.logit(formula_controls, data = df)
+result_controls = model_controls.fit()
+print(result_controls.summary())
+
+formula_sr = (
+    "replied ~ " + base + " + " + controls + " + " +
+    "C(sender, Treatment(reference='german')):"
+    "C(sender_university, Treatment(reference='New York University'))"
+)
+
+model_sr = smf.logit(formula_sr, data=df)
+result_sr = model_sr.fit()
+print(result_sr.summary())
+
+
+#regression models estimating likelihood of positive reply
 
 #log odds estimate on the probability of receiving the paper in question
-logit_model = smf.logit("is_positive_reply ~ C(sender_name, Treatment(reference='Karl Muller')) + C(sender_status, Treatment(reference='Journal Article')) + C(sender_university, Treatment(reference='New York University')) + C(paper_domain, Treatment(reference='Health Sciences')) + h_index + academic_age + C(matching_continent, Treatment(reference='No Match'))",
-    data=df)
+base = (
+    "C(sender, Treatment(reference='german')) + "
+    "C(sender_status, Treatment(reference='Journal Article')) + "
+    "C(sender_university, Treatment(reference='New York University'))"
+)
 
-res = logit_model.fit()
-print(res.summary())
+controls = ("C(paper_domain, Treatment(reference='Health Sciences')) + h_index + academic_age + C(matching_continent, Treatment(reference='No Match'))")
+
+
+formula_base = (
+    "is_positive_reply ~ " + base
+)
+
+model_base = smf.logit(formula_base, data = df)
+result_base = model_base.fit()
+print(result_base.summary())
+
+formula_controls = (
+    "is_positive_reply ~ " + base + " + " + controls
+)
+
+model_controls = smf.logit(formula_controls, data = df)
+result_controls = model_controls.fit()
+print(result_controls.summary())
+
+formula_sr = (
+    "is_positive_reply ~ " + base + " + " + controls + " + " +
+    "C(sender, Treatment(reference='german')):"
+    "C(sender_university, Treatment(reference='New York University'))"
+)
+
+model_sr = smf.logit(formula_sr, data=df)
+result_sr = model_sr.fit()
+print(result_sr.summary())
 
 
 
 #Figure 2B
-log_odds = pd.read_csv('log_odds.csv')
+log_odds = pd.read_csv('log_odds_model_2.csv')
 mpl.rcParams['font.family'] = 'Helvetica'
 mpl.rcParams['pdf.fonttype'] = 42
 
