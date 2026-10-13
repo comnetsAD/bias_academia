@@ -3,3 +3,14 @@
 
 observational_analyses/data/large
 */observational_analyses/data/large/*
+
+# private: contains recipient identifiers, never commit
+audit_experiments/paywalled_papers_audit/all_emails_mailbox_merged_stata.csv
+
+# macOS
+._*
+.DS_Store
+
+# outputs written by run_audit_demo.sh (reference copies live in expected_output/)
+audit_experiments/*/*.log
+audit_experiments/*/*.pdf

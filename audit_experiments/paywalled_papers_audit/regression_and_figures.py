@@ -12,7 +12,7 @@ df = pd.read_csv('paywalled_papers_audit_reply_data.csv')
 #regression models estimating likelihood of any reply
 #log odds estimate on the probability of receiving the paper in question
 base = (
-    "C(sender, Treatment(reference='german')) + "
+    "C(sender_name, Treatment(reference='Karl Muller')) + "
     "C(sender_status, Treatment(reference='Journal Article')) + "
     "C(sender_university, Treatment(reference='New York University'))"
 )
@@ -38,7 +38,7 @@ print(result_controls.summary())
 
 formula_sr = (
     "replied ~ " + base + " + " + controls + " + " +
-    "C(sender, Treatment(reference='german')):"
+    "C(sender_name, Treatment(reference='Karl Muller')):"
     "C(sender_university, Treatment(reference='New York University'))"
 )
 
@@ -51,7 +51,7 @@ print(result_sr.summary())
 
 #log odds estimate on the probability of receiving the paper in question
 base = (
-    "C(sender, Treatment(reference='german')) + "
+    "C(sender_name, Treatment(reference='Karl Muller')) + "
     "C(sender_status, Treatment(reference='Journal Article')) + "
     "C(sender_university, Treatment(reference='New York University'))"
 )
@@ -77,7 +77,7 @@ print(result_controls.summary())
 
 formula_sr = (
     "is_positive_reply ~ " + base + " + " + controls + " + " +
-    "C(sender, Treatment(reference='german')):"
+    "C(sender_name, Treatment(reference='Karl Muller')):"
     "C(sender_university, Treatment(reference='New York University'))"
 )
 
@@ -88,7 +88,7 @@ print(result_sr.summary())
 
 
 #Figure 2B
-log_odds = pd.read_csv('log_odds_model_2.csv')
+log_odds = pd.read_csv('log_odds.csv')
 mpl.rcParams['font.family'] = 'Helvetica'
 mpl.rcParams['pdf.fonttype'] = 42
 
@@ -116,7 +116,7 @@ axs.set_xlabel('Log odds ratio of reply rate', fontsize = 8)
 axs.tick_params(axis = 'both', labelsize = 8)
 sns.despine()
 
-# fig.savefig('figure_2b.pdf', dpi = 300, transparent = True, bbox_inches = 'tight')
+fig.savefig('figure_2b.pdf', dpi = 300, transparent = True, bbox_inches = 'tight')
 
 
 condition_means = df.groupby(['sender_name', 'sender_status', 'sender_university'])['replied'].mean().reset_index()
@@ -194,4 +194,4 @@ axs.legend(
     frameon=False
 )
 
-# fig.savefig('figure_2a.pdf', bbox_inches = 'tight', dpi = 300)
+fig.savefig('figure_2a.pdf', bbox_inches = 'tight', dpi = 300)

@@ -1,0 +1,289 @@
+Optimization terminated successfully.
+         Current function value: 0.467460
+         Iterations 6
+=== Reply Model: Base ===
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:                replied   No. Observations:                 7761
+Model:                          Logit   Df Residuals:                     7755
+Method:                           MLE   Df Model:                            5
+Date:                Tue, 13 Oct 2026   Pseudo R-squ.:                0.007530
+Time:                        18:20:10   Log-Likelihood:                -3628.0
+converged:                       True   LL-Null:                       -3655.5
+Covariance Type:            nonrobust   LLR p-value:                 1.275e-10
+==================================================================================================================================================================
+                                                                                                     coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                                                         -1.2177      0.071    -17.166      0.000      -1.357      -1.079
+C(sender_name, Treatment(reference='Karl Muller'))[T.Faisal Khan]                                 -0.4967      0.071     -6.996      0.000      -0.636      -0.358
+C(sender_name, Treatment(reference='Karl Muller'))[T.Olu Adeyemi]                                 -0.3546      0.073     -4.855      0.000      -0.498      -0.211
+C(sender_status, Treatment(reference='Journal Article'))[T.Class project]                          0.0303      0.059      0.510      0.610      -0.086       0.147
+C(sender_university, Treatment(reference='New York University'))[T.Louisiana State University]     0.0231      0.073      0.318      0.751      -0.119       0.165
+C(sender_university, Treatment(reference='New York University'))[T.San Diego State University]    -0.1142      0.073     -1.572      0.116      -0.257       0.028
+==================================================================================================================================================================
+
+--- Bonferroni-corrected ---
+                                                    Coefficient  ...  Upper CI
+Intercept                                             -1.217717  ... -1.030561
+C(sender_name, Treatment(reference='Karl Muller...    -0.496686  ... -0.309374
+C(sender_name, Treatment(reference='Karl Muller...    -0.354579  ... -0.161909
+C(sender_status, Treatment(reference='Journal A...     0.030267  ...  0.186857
+C(sender_university, Treatment(reference='New Y...     0.023072  ...  0.214748
+C(sender_university, Treatment(reference='New Y...    -0.114249  ...  0.077479
+
+[6 rows x 6 columns]
+Optimization terminated successfully.
+         Current function value: 0.459295
+         Iterations 6
+
+=== Reply Model: Controls ===
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:                replied   No. Observations:                 7744
+Model:                          Logit   Df Residuals:                     7730
+Method:                           MLE   Df Model:                           13
+Date:                Tue, 13 Oct 2026   Pseudo R-squ.:                 0.02529
+Time:                        18:20:11   Log-Likelihood:                -3556.8
+converged:                       True   LL-Null:                       -3649.1
+Covariance Type:            nonrobust   LLR p-value:                 1.967e-32
+==================================================================================================================================================================
+                                                                                                     coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                                                         -0.6439      0.167     -3.864      0.000      -0.970      -0.317
+C(sender_name, Treatment(reference='Karl Muller'))[T.Faisal Khan]                                 -0.5054      0.074     -6.832      0.000      -0.650      -0.360
+C(sender_name, Treatment(reference='Karl Muller'))[T.Olu Adeyemi]                                 -0.3621      0.075     -4.817      0.000      -0.509      -0.215
+C(sender_status, Treatment(reference='Journal Article'))[T.Class project]                          0.0218      0.060      0.363      0.717      -0.096       0.139
+C(sender_university, Treatment(reference='New York University'))[T.Louisiana State University]     0.0516      0.074      0.701      0.483      -0.093       0.196
+C(sender_university, Treatment(reference='New York University'))[T.San Diego State University]    -0.0523      0.074     -0.711      0.477      -0.197       0.092
+C(paper_domain, Treatment(reference='Health Sciences'))[T.Life Sciences]                          -0.0305      0.113     -0.269      0.788      -0.252       0.191
+C(paper_domain, Treatment(reference='Health Sciences'))[T.Physical Sciences]                      -0.3788      0.082     -4.623      0.000      -0.539      -0.218
+C(paper_domain, Treatment(reference='Health Sciences'))[T.Social Sciences]                         0.0801      0.108      0.741      0.459      -0.132       0.292
+C(matching_continent, Treatment(reference='No Match'))[T.Match Asian]                              0.4629      0.191      2.419      0.016       0.088       0.838
+C(matching_continent, Treatment(reference='No Match'))[T.Match German]                            -0.0261      0.271     -0.096      0.923      -0.557       0.505
+C(matching_continent, Treatment(reference='No Match'))[T.Match Nigerian]                           1.7515      0.386      4.536      0.000       0.995       2.508
+h_index                                                                                           -0.0102      0.002     -5.432      0.000      -0.014      -0.007
+academic_age                                                                                      -0.0124      0.013     -0.982      0.326      -0.037       0.012
+==================================================================================================================================================================
+
+--- Bonferroni-corrected ---
+                                                    Coefficient  ...  Upper CI
+Intercept                                             -0.643911  ... -0.158414
+C(sender_name, Treatment(reference='Karl Muller...    -0.505363  ... -0.289845
+C(sender_name, Treatment(reference='Karl Muller...    -0.362057  ... -0.143051
+C(sender_status, Treatment(reference='Journal A...     0.021762  ...  0.196510
+C(sender_university, Treatment(reference='New Y...     0.051609  ...  0.265995
+C(sender_university, Treatment(reference='New Y...    -0.052345  ...  0.162312
+C(paper_domain, Treatment(reference='Health Sci...    -0.030507  ...  0.299412
+C(paper_domain, Treatment(reference='Health Sci...    -0.378761  ... -0.140041
+C(paper_domain, Treatment(reference='Health Sci...     0.080078  ...  0.395124
+C(matching_continent, Treatment(reference='No M...     0.462872  ...  1.020329
+C(matching_continent, Treatment(reference='No M...    -0.026118  ...  0.762762
+C(matching_continent, Treatment(reference='No M...     1.751480  ...  2.876478
+h_index                                               -0.010180  ... -0.004719
+academic_age                                          -0.012436  ...  0.024478
+
+[14 rows x 6 columns]
+Optimization terminated successfully.
+         Current function value: 0.459153
+         Iterations 6
+
+=== Reply Model: Sender x University ===
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:                replied   No. Observations:                 7744
+Model:                          Logit   Df Residuals:                     7726
+Method:                           MLE   Df Model:                           17
+Date:                Tue, 13 Oct 2026   Pseudo R-squ.:                 0.02559
+Time:                        18:20:11   Log-Likelihood:                -3555.7
+converged:                       True   LL-Null:                       -3649.1
+Covariance Type:            nonrobust   LLR p-value:                 1.276e-30
+====================================================================================================================================================================================================================================
+                                                                                                                                                                       coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                                                                                                                           -0.6035      0.174     -3.477      0.001      -0.944      -0.263
+C(sender_name, Treatment(reference='Karl Muller'))[T.Faisal Khan]                                                                                                   -0.5953      0.126     -4.724      0.000      -0.842      -0.348
+C(sender_name, Treatment(reference='Karl Muller'))[T.Olu Adeyemi]                                                                                                   -0.4253      0.129     -3.302      0.001      -0.678      -0.173
+C(sender_status, Treatment(reference='Journal Article'))[T.Class project]                                                                                            0.0226      0.060      0.377      0.706      -0.095       0.140
+C(sender_university, Treatment(reference='New York University'))[T.Louisiana State University]                                                                       0.0339      0.121      0.280      0.779      -0.203       0.271
+C(sender_university, Treatment(reference='New York University'))[T.San Diego State University]                                                                      -0.1761      0.121     -1.458      0.145      -0.413       0.061
+C(paper_domain, Treatment(reference='Health Sciences'))[T.Life Sciences]                                                                                            -0.0263      0.113     -0.233      0.816      -0.248       0.196
+C(paper_domain, Treatment(reference='Health Sciences'))[T.Physical Sciences]                                                                                        -0.3688      0.082     -4.481      0.000      -0.530      -0.208
+C(paper_domain, Treatment(reference='Health Sciences'))[T.Social Sciences]                                                                                           0.0799      0.108      0.738      0.461      -0.132       0.292
+C(matching_continent, Treatment(reference='No Match'))[T.Match Asian]                                                                                                0.4649      0.191      2.430      0.015       0.090       0.840
+C(matching_continent, Treatment(reference='No Match'))[T.Match German]                                                                                              -0.0325      0.271     -0.120      0.905      -0.563       0.499
+C(matching_continent, Treatment(reference='No Match'))[T.Match Nigerian]                                                                                             1.7501      0.386      4.534      0.000       0.994       2.507
+C(sender_name, Treatment(reference='Karl Muller'))[T.Faisal Khan]:C(sender_university, Treatment(reference='New York University'))[T.Louisiana State University]     0.0321      0.176      0.183      0.855      -0.312       0.376
+C(sender_name, Treatment(reference='Karl Muller'))[T.Olu Adeyemi]:C(sender_university, Treatment(reference='New York University'))[T.Louisiana State University]     0.0309      0.182      0.170      0.865      -0.326       0.388
+C(sender_name, Treatment(reference='Karl Muller'))[T.Faisal Khan]:C(sender_university, Treatment(reference='New York University'))[T.San Diego State University]     0.2376      0.177      1.344      0.179      -0.109       0.584
+C(sender_name, Treatment(reference='Karl Muller'))[T.Olu Adeyemi]:C(sender_university, Treatment(reference='New York University'))[T.San Diego State University]     0.1546      0.181      0.855      0.392      -0.200       0.509
+h_index                                                                                                                                                             -0.0102      0.002     -5.428      0.000      -0.014      -0.007
+academic_age                                                                                                                                                        -0.0123      0.013     -0.974      0.330      -0.037       0.012
+====================================================================================================================================================================================================================================
+
+--- Bonferroni-corrected ---
+                                                    Coefficient  ...  Upper CI
+Intercept                                             -0.603529  ... -0.084355
+C(sender_name, Treatment(reference='Karl Muller...    -0.595319  ... -0.218341
+C(sender_name, Treatment(reference='Karl Muller...    -0.425284  ... -0.040067
+C(sender_status, Treatment(reference='Journal A...     0.022631  ...  0.202103
+C(sender_university, Treatment(reference='New Y...     0.033930  ...  0.396273
+C(sender_university, Treatment(reference='New Y...    -0.176052  ...  0.185183
+C(paper_domain, Treatment(reference='Health Sci...    -0.026344  ...  0.312594
+C(paper_domain, Treatment(reference='Health Sci...    -0.368798  ... -0.122624
+C(paper_domain, Treatment(reference='Health Sci...     0.079881  ...  0.403694
+C(matching_continent, Treatment(reference='No M...     0.464878  ...  1.037129
+C(matching_continent, Treatment(reference='No M...    -0.032481  ...  0.777909
+C(matching_continent, Treatment(reference='No M...     1.750058  ...  2.904712
+C(sender_name, Treatment(reference='Karl Muller...     0.032131  ...  0.557466
+C(sender_name, Treatment(reference='Karl Muller...     0.030938  ...  0.575553
+C(sender_name, Treatment(reference='Karl Muller...     0.237551  ...  0.766108
+C(sender_name, Treatment(reference='Karl Muller...     0.154595  ...  0.695172
+h_index                                               -0.010179  ... -0.004570
+academic_age                                          -0.012345  ...  0.025561
+
+[18 rows x 6 columns]
+Optimization terminated successfully.
+         Current function value: 0.437198
+         Iterations 6
+
+=== Positive Reply Model: Base ===
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:      is_positive_reply   No. Observations:                 7761
+Model:                          Logit   Df Residuals:                     7755
+Method:                           MLE   Df Model:                            5
+Date:                Tue, 13 Oct 2026   Pseudo R-squ.:                0.006704
+Time:                        18:20:11   Log-Likelihood:                -3393.1
+converged:                       True   LL-Null:                       -3416.0
+Covariance Type:            nonrobust   LLR p-value:                 9.975e-09
+==================================================================================================================================================================
+                                                                                                     coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                                                         -1.3651      0.074    -18.414      0.000      -1.510      -1.220
+C(sender_name, Treatment(reference='Karl Muller'))[T.Faisal Khan]                                 -0.4855      0.074     -6.528      0.000      -0.631      -0.340
+C(sender_name, Treatment(reference='Karl Muller'))[T.Olu Adeyemi]                                 -0.3312      0.076     -4.346      0.000      -0.481      -0.182
+C(sender_status, Treatment(reference='Journal Article'))[T.Class project]                          0.0062      0.062      0.100      0.920      -0.115       0.128
+C(sender_university, Treatment(reference='New York University'))[T.Louisiana State University]     0.0191      0.076      0.251      0.802      -0.130       0.169
+C(sender_university, Treatment(reference='New York University'))[T.San Diego State University]    -0.0806      0.076     -1.062      0.288      -0.229       0.068
+==================================================================================================================================================================
+
+--- Bonferroni-corrected ---
+                                                    Coefficient  ...  Upper CI
+Intercept                                             -1.365126  ... -1.169538
+C(sender_name, Treatment(reference='Karl Muller...    -0.485450  ... -0.289266
+C(sender_name, Treatment(reference='Karl Muller...    -0.331171  ... -0.130117
+C(sender_status, Treatment(reference='Journal A...     0.006210  ...  0.169979
+C(sender_university, Treatment(reference='New Y...     0.019127  ...  0.220279
+C(sender_university, Treatment(reference='New Y...    -0.080565  ...  0.119603
+
+[6 rows x 6 columns]
+Optimization terminated successfully.
+         Current function value: 0.429008
+         Iterations 6
+
+=== Positive Reply Model: Controls ===
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:      is_positive_reply   No. Observations:                 7744
+Model:                          Logit   Df Residuals:                     7730
+Method:                           MLE   Df Model:                           13
+Date:                Tue, 13 Oct 2026   Pseudo R-squ.:                 0.02565
+Time:                        18:20:11   Log-Likelihood:                -3322.2
+converged:                       True   LL-Null:                       -3409.7
+Covariance Type:            nonrobust   LLR p-value:                 1.826e-30
+==================================================================================================================================================================
+                                                                                                     coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                                                         -0.8181      0.173     -4.739      0.000      -1.156      -0.480
+C(sender_name, Treatment(reference='Karl Muller'))[T.Faisal Khan]                                 -0.4996      0.077     -6.450      0.000      -0.651      -0.348
+C(sender_name, Treatment(reference='Karl Muller'))[T.Olu Adeyemi]                                 -0.3398      0.078     -4.336      0.000      -0.493      -0.186
+C(sender_status, Treatment(reference='Journal Article'))[T.Class project]                         -0.0052      0.063     -0.083      0.934      -0.128       0.118
+C(sender_university, Treatment(reference='New York University'))[T.Louisiana State University]     0.0495      0.077      0.642      0.521      -0.102       0.201
+C(sender_university, Treatment(reference='New York University'))[T.San Diego State University]    -0.0148      0.077     -0.192      0.848      -0.166       0.136
+C(paper_domain, Treatment(reference='Health Sciences'))[T.Life Sciences]                           0.0647      0.119      0.543      0.587      -0.169       0.298
+C(paper_domain, Treatment(reference='Health Sciences'))[T.Physical Sciences]                      -0.2765      0.087     -3.173      0.002      -0.447      -0.106
+C(paper_domain, Treatment(reference='Health Sciences'))[T.Social Sciences]                         0.1929      0.113      1.707      0.088      -0.029       0.414
+C(matching_continent, Treatment(reference='No Match'))[T.Match Asian]                              0.4604      0.199      2.311      0.021       0.070       0.851
+C(matching_continent, Treatment(reference='No Match'))[T.Match German]                            -0.2635      0.302     -0.873      0.383      -0.856       0.328
+C(matching_continent, Treatment(reference='No Match'))[T.Match Nigerian]                           1.5773      0.387      4.079      0.000       0.819       2.335
+h_index                                                                                           -0.0122      0.002     -6.022      0.000      -0.016      -0.008
+academic_age                                                                                      -0.0132      0.013     -1.010      0.312      -0.039       0.012
+==================================================================================================================================================================
+
+--- Bonferroni-corrected ---
+                                                    Coefficient  ...  Upper CI
+Intercept                                             -0.818052  ... -0.315076
+C(sender_name, Treatment(reference='Karl Muller...    -0.499622  ... -0.273934
+C(sender_name, Treatment(reference='Karl Muller...    -0.339846  ... -0.111479
+C(sender_status, Treatment(reference='Journal A...    -0.005204  ...  0.177554
+C(sender_university, Treatment(reference='New Y...     0.049544  ...  0.274502
+C(sender_university, Treatment(reference='New Y...    -0.014754  ...  0.209406
+C(paper_domain, Treatment(reference='Health Sci...     0.064732  ...  0.412030
+C(paper_domain, Treatment(reference='Health Sci...    -0.276520  ... -0.022593
+C(paper_domain, Treatment(reference='Health Sci...     0.192933  ...  0.522313
+C(matching_continent, Treatment(reference='No M...     0.460413  ...  1.040827
+C(matching_continent, Treatment(reference='No M...    -0.263539  ...  0.616539
+C(matching_continent, Treatment(reference='No M...     1.577273  ...  2.703993
+h_index                                               -0.012236  ... -0.006315
+academic_age                                          -0.013224  ...  0.024917
+
+[14 rows x 6 columns]
+Optimization terminated successfully.
+         Current function value: 0.428923
+         Iterations 6
+
+=== Positive Reply Model: Sender x University ===
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:      is_positive_reply   No. Observations:                 7744
+Model:                          Logit   Df Residuals:                     7726
+Method:                           MLE   Df Model:                           17
+Date:                Tue, 13 Oct 2026   Pseudo R-squ.:                 0.02585
+Time:                        18:20:12   Log-Likelihood:                -3321.6
+converged:                       True   LL-Null:                       -3409.7
+Covariance Type:            nonrobust   LLR p-value:                 1.602e-28
+====================================================================================================================================================================================================================================
+                                                                                                                                                                       coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                                                                                                                           -0.7856      0.180     -4.365      0.000      -1.138      -0.433
+C(sender_name, Treatment(reference='Karl Muller'))[T.Faisal Khan]                                                                                                   -0.5606      0.132     -4.245      0.000      -0.819      -0.302
+C(sender_name, Treatment(reference='Karl Muller'))[T.Olu Adeyemi]                                                                                                   -0.3976      0.135     -2.945      0.003      -0.662      -0.133
+C(sender_status, Treatment(reference='Journal Article'))[T.Class project]                                                                                           -0.0049      0.063     -0.078      0.938      -0.128       0.118
+C(sender_university, Treatment(reference='New York University'))[T.Louisiana State University]                                                                       0.0266      0.127      0.209      0.834      -0.223       0.276
+C(sender_university, Treatment(reference='New York University'))[T.San Diego State University]                                                                      -0.0998      0.126     -0.795      0.427      -0.346       0.146
+C(paper_domain, Treatment(reference='Health Sciences'))[T.Life Sciences]                                                                                             0.0675      0.119      0.566      0.572      -0.166       0.301
+C(paper_domain, Treatment(reference='Health Sciences'))[T.Physical Sciences]                                                                                        -0.2699      0.088     -3.084      0.002      -0.441      -0.098
+C(paper_domain, Treatment(reference='Health Sciences'))[T.Social Sciences]                                                                                           0.1938      0.113      1.713      0.087      -0.028       0.416
+C(matching_continent, Treatment(reference='No Match'))[T.Match Asian]                                                                                                0.4619      0.199      2.319      0.020       0.071       0.852
+C(matching_continent, Treatment(reference='No Match'))[T.Match German]                                                                                              -0.2675      0.302     -0.886      0.376      -0.860       0.325
+C(matching_continent, Treatment(reference='No Match'))[T.Match Nigerian]                                                                                             1.5753      0.387      4.075      0.000       0.818       2.333
+C(sender_name, Treatment(reference='Karl Muller'))[T.Faisal Khan]:C(sender_university, Treatment(reference='New York University'))[T.Louisiana State University]     0.0091      0.185      0.049      0.961      -0.353       0.371
+C(sender_name, Treatment(reference='Karl Muller'))[T.Olu Adeyemi]:C(sender_university, Treatment(reference='New York University'))[T.Louisiana State University]     0.0731      0.190      0.384      0.701      -0.300       0.446
+C(sender_name, Treatment(reference='Karl Muller'))[T.Faisal Khan]:C(sender_university, Treatment(reference='New York University'))[T.San Diego State University]     0.1741      0.184      0.944      0.345      -0.187       0.536
+C(sender_name, Treatment(reference='Karl Muller'))[T.Olu Adeyemi]:C(sender_university, Treatment(reference='New York University'))[T.San Diego State University]     0.0977      0.189      0.518      0.604      -0.272       0.467
+h_index                                                                                                                                                             -0.0122      0.002     -6.023      0.000      -0.016      -0.008
+academic_age                                                                                                                                                        -0.0132      0.013     -1.009      0.313      -0.039       0.012
+====================================================================================================================================================================================================================================
+
+--- Bonferroni-corrected ---
+                                                    Coefficient  ...  Upper CI
+Intercept                                             -0.785559  ... -0.247190
+C(sender_name, Treatment(reference='Karl Muller...    -0.560610  ... -0.165524
+C(sender_name, Treatment(reference='Karl Muller...    -0.397609  ...  0.006198
+C(sender_status, Treatment(reference='Journal A...    -0.004903  ...  0.182785
+C(sender_university, Treatment(reference='New Y...     0.026605  ...  0.406924
+C(sender_university, Treatment(reference='New Y...    -0.099804  ...  0.275816
+C(paper_domain, Treatment(reference='Health Sci...     0.067476  ...  0.424226
+C(paper_domain, Treatment(reference='Health Sci...    -0.269948  ... -0.008129
+C(paper_domain, Treatment(reference='Health Sci...     0.193787  ...  0.532251
+C(matching_continent, Treatment(reference='No M...     0.461861  ...  1.057700
+C(matching_continent, Treatment(reference='No M...    -0.267547  ...  0.636218
+C(matching_continent, Treatment(reference='No M...     1.575311  ...  2.731628
+C(sender_name, Treatment(reference='Karl Muller...     0.009135  ...  0.561522
+C(sender_name, Treatment(reference='Karl Muller...     0.073131  ...  0.642795
+C(sender_name, Treatment(reference='Karl Muller...     0.174077  ...  0.725764
+C(sender_name, Treatment(reference='Karl Muller...     0.097668  ...  0.661602
+h_index                                               -0.012248  ... -0.006165
+academic_age                                          -0.013209  ...  0.025957
+
+[18 rows x 6 columns]

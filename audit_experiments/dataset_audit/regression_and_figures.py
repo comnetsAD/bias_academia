@@ -172,7 +172,7 @@ axs.legend(
 
 fig.show()
 
-# fig.savefig('figure_4a.pdf', bbox_inches = 'tight', dpi = 300)
+fig.savefig('figure_4a.pdf', bbox_inches = 'tight', dpi = 300)
 
 
 
@@ -205,4 +205,4 @@ axs.tick_params(axis = 'both', labelsize = 8)
 sns.despine()
 
 fig.show()
-# fig.savefig('figure_4b.pdf', bbox_inches = 'tight', dpi = 300)
+fig.savefig('figure_4b.pdf', bbox_inches = 'tight', dpi = 300)
